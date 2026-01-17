@@ -68,7 +68,7 @@ Everything is intentionally kept in a single file to make learning and understan
 
 ### 1. Clone this repository
 ```bash
-git clone https://github.com/ritushinde36/GolangProjects/golang-movies-crud-api.git
+git clone https://github.com/ritushinde36/GolangProjects.git
 cd golang-movies-crud-api
 ```
 ### 2. Install dependencies
