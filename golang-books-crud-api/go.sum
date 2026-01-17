@@ -1,0 +1,4 @@
+github.com/gorilla/mux v1.8.1 h1:TuBL49tXwgrFYWhqrNgrUNEY92u81SPhu7sTdzQEiWY=
+github.com/gorilla/mux v1.8.1/go.mod h1:AKf9I4AEqPTmMytcMc0KkNouC66V3BtZ4qD5fmWSiMQ=
+github.com/pallinder/go-randomdata v1.2.0 h1:EJPxw+sgM1mbMW8RBu5zkG4FbloJpDOCCqPccdWto8A=
+github.com/pallinder/go-randomdata v1.2.0/go.mod h1:p8CasZQiWDLuaKy5ihVvdshqc7LlL6ovmRxAuNXgi3U=
