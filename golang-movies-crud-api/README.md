@@ -73,7 +73,7 @@ cd golang-movies-crud-api
 ```
 ### 2. Install dependencies
 ```bash
-go mod tidy
+go mod download
 ```
 
 ### 3. Run the server
