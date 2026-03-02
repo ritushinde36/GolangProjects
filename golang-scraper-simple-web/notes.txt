@@ -1,0 +1,15 @@
+create a simple web scraper application, where when we run the command, it will take all the URLs that are passed to it and get all the links present on that URL
+for each URL, it will parse the html of it and find the <a></a> tags which are link tags, in this tags it will check for the urls that start with http in the href attribute
+when it parses the html for onw URL, it will run in an go-routine
+the urls have to be unique
+
+go run . <url1> <url2> <url3>
+get the urls and loop through them
+
+crawler function
+make http request to the url and get the html resonse of the body
+tokenize the html page
+find the tokens where <a> is used and get the href attribute from the tag
+get the URL from the href attribute and validate if it starts with http
+
+send all the found URLs in a channel and once you have found all the URLs , send that its finished in another channel
