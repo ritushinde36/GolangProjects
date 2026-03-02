@@ -1,0 +1,62 @@
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/database-projects/books-crud-mysql (master)
+$ go mod init books-crud-mysql
+go: creating new go.mod: module books-crud-mysql
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/database-projects/books-crud-mysql (master)
+$ go get github.com/gorilla/mux
+go: added github.com/gorilla/mux v1.8.1
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/database-projects/books-crud-mysql (master)
+$ go get github.com/jinzhu/gorm
+go: downloading github.com/jinzhu/gorm v1.9.16
+go: downloading github.com/jinzhu/inflection v1.0.0
+go: added github.com/jinzhu/gorm v1.9.16
+go: added github.com/jinzhu/inflection v1.0.0
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/database-projects/books-crud-mysql (master)
+$ go get github.com/jinzhu/gorm/dialects/mysql
+go: downloading github.com/go-sql-driver/mysql v1.5.0
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/database-projects/books-crud-mysql (master)
+$
+
+----------------------------------------------------------
+Why do you need _ when importing the MySQL dialect in GORM?
+The package github.com/jinzhu/gorm/dialects/mysql registers the MySQL dialect with GORM using its init() function. When you import it with an underscore (_), Go runs the init() function in that package, which initializes the MySQL driver and registers it with GORM.
+
+Without this import, GORM would not recognize the MySQL dialect, and you'd get an error when trying to connect to a MySQL database.
+
+Example:
+go
+Copy
+Edit
+import (
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
+)
+
+func main() {
+	db, err := gorm.Open("mysql", "user:password@/dbname?charset=utf8&parseTime=True&loc=Local")
+	if err != nil {
+		panic("failed to connect database")
+	}
+	defer db.Close()
+}
+What would happen if you omitted _ "github.com/jinzhu/gorm/dialects/mysql"?
+If you remove this import, GORM won't know how to handle MySQL connections, and you'll get an error like:
+
+Summary:
+The underscore _ tells Go to import the package only for its side effects (like running init()).
+
+GORM needs the MySQL dialect package to be registered, which happens in init().
+
+Without this import, MySQL support won't be available in GORM.
+
+---------------------------------------
+
+create table books(
+	id int,
+    name varchar(255),
+    author varchar(255),
+    publication varchar(255)
+)

@@ -1,0 +1,7 @@
+make a web scraper that reads a URL called https://www.golangcode.com/ and gets the blog title and paragraph and then stores it in a JSON file.
+use goquery from scraping.
+goquery is similar to jquery.
+
+define a struct that says title and content
+scrape the URL
+store the data in JSON format

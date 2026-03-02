@@ -1,0 +1,35 @@
+scarping - https://quotes.toscrape.com/
+there are a total of 10 tags to scrape
+
+the user will add the tag that it wants to scrape in the command line
+
+then it will scrape the all the data for that tag.
+	it will scrape all the quotes (so you have to be mindful of the pages)
+
+love_quotes.json
+humor_quotes.json
+author.json
+
+quote {
+content string
+author Author
+tags []string
+}
+
+Author {
+    author_name string
+    born string
+    description string
+}
+
+
+then create an API where you can get the quotes
+get all quotes - user and admin
+get quotes by tag - user and admin
+create quote - admin
+delete quote - admin
+update quote - admin
+
+use user agents
+
+

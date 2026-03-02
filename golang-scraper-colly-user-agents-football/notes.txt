@@ -1,0 +1,5 @@
+scrape this website - https://www.scrapethissite.com/pages/forms/
+user will enter the name on the command line
+and data will be scraped and stores in an CSV
+
+use user agents

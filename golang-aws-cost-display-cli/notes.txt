@@ -1,0 +1,50 @@
+awscost services
+awscost services                          # all services this month + total
+awscost services --month 2024-01          # all services for specific month + total
+awscost services --range 2024-01 2024-06  # services per month + total per month
+awscost services --top 10                 # top N services by cost this month
+
+awscost service
+awscost service ec2                       # ec2 cost this month
+awscost service ec2 --month 2024-01       # ec2 cost for specific month
+
+--name mandatory
+-- month optional
+--between optional
+
+awscost service --name <name of the service>  # display data for current month
+awscost service --name <name of the service> --month <year-month> #display data for that month
+awscost service --name <name of the service> --between <start_year-month> <end_year-month> #display data for that range for the month
+
+
+
+
+Global flags:
+--region      # AWS region
+--output      # table (default), json, csv, yaml
+
+---
+
+go get -u github.com/spf13/cobra@latest
+go install github.com/spf13/cobra-cli@latest
+cobra-cli init awscost
+cd awscost
+cobra-cli add services
+cobra-cli add service
+cobra-cli add budgets
+go get github.com/aws/aws-sdk-go-v2
+go get github.com/aws/aws-sdk-go-v2/config
+go get github.com/aws/aws-sdk-go-v2/service/costexplorer
+
+if you want to run it from anywhere without ./, add it to your PATH or just move it:
+bash
+
+go build -o awscost.exe .
+mv awscost.exe /usr/local/bin/awscost.exe
+
+
+Stuff to add in the read me
+
+1. Unit tests — test your validation logic, flag checking, date formatting etc. No AWS needed.
+2. Integration tests — test actual AWS SDK calls. Needs real AWS credentials.
+3. Need to have the aws cli downloaded and aws credentials configured using "aws configure"

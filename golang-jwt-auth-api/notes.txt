@@ -1,0 +1,60 @@
+JWT authentication in go
+tutorial that I followed - https://www.youtube.com/watch?v=ma7rUS_vW9M&t=910s
+
+install the dependencies
+
+1) routing -- gin
+2) DB - gorm, mysql
+3) secrets - goenv
+4) jwt - golang-jwt
+5) enctrytion and decryption - bcrypt
+six) restart project upon changes in file - compile deamon
+
+---------------------------------------
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/jwt-auth/jwt-auth-sql-simple (master)
+$ go get -u gorm.io/gorm
+go: downloading gorm.io/gorm v1.25.12
+go: downloading golang.org/x/text v0.14.0
+go: downloading golang.org/x/text v0.24.0
+go: added github.com/jinzhu/inflection v1.0.0
+go: added github.com/jinzhu/now v1.1.5
+go: added golang.org/x/text v0.24.0
+go: added gorm.io/gorm v1.25.12
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/jwt-auth/jwt-auth-sql-simple (master)
+$ go get -u gorm.io/driver/mysql
+go: downloading github.com/go-sql-driver/mysql v1.9.2
+go: added filippo.io/edwards25519 v1.1.0
+go: added github.com/go-sql-driver/mysql v1.9.2
+go: added gorm.io/driver/mysql v1.5.7
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/jwt-auth/jwt-auth-sql-simple (master)
+$
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/jwt-auth/jwt-auth-sql-simple (master)
+$ go get -u github.com/gin-gonic/gin
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/jwt-auth/jwt-auth-sql-simple (master)
+$ go get -u golang.org/x/crypto/bcrypt
+
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/jwt-auth/jwt-auth-sql-simple
+$ go get -u github.com/golang-jwt/jwt/v4
+go: downloading github.com/golang-jwt/jwt/v4 v4.5.2
+go: added github.com/golang-jwt/jwt/v4 v4.5.2
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/jwt-auth/jwt-auth-sql-simple (master)
+$ go get -u github.com/joho/Godotenv
+go: downloading github.com/joho/Godotenv v1.5.1
+go: github.com/joho/Godotenv@upgrade (v1.5.1) requires github.com/joho/Godotenv@v1.5.1: parsing go.mod:
+        module declares its path as: github.com/joho/godotenv
+                but was required as: github.com/joho/Godotenv
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/jwt-auth/jwt-auth-sql-simple (master)
+$ go get -u github.com/githubnemo/compiledaemon
+go: downloading github.com/githubnemo/compiledaemon v1.4.0
+go: github.com/githubnemo/compiledaemon@upgrade (v1.4.0) requires github.com/githubnemo/compiledaemon@v1.4.0: parsing go.mod:
+        module declares its path as: github.com/githubnemo/CompileDaemon
+                but was required as: github.com/githubnemo/compiledaemon
+

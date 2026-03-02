@@ -1,0 +1,62 @@
+create a command line application which is a quiz game. 
+This quiz game is a cli tool and you can run it with ./quiz or quiz
+data from the quiz should come from a csv file,
+there are 4 kinds of problems, addition subtraction multiplication and division
+each should have their own csv files
+if you want to solve addition problems, then use the -add flag
+if you want to solve subtraction problems, then use the -sub flag
+if you want to solve multiplication problems, then use the -mul flag
+if you want to solve division problems, then use the -div flag flag
+
+you also have to pass the name of the file in the -csv flag ex - -csv "addition_problems.csv"
+
+it should also have a time limit -limit in seconds, once the time limit is crossed, the quix should exit out and display the final score
+
+the score should be displayed at the end of the script
+score in blue
+then it should display the problem numbers that you got right and the problem numbers that you got wrong
+correct answers in green
+and incorrect answers in red.
+
+------------------------
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/cli-projects/quiz (master)
+$ go mod init quiz
+go: creating new go.mod: module quiz
+go: to add module requirements and sums:
+        go mod tidy
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/cli-projects/quiz (master)
+$ go get github.com/spf13/cobra@latest
+go: added github.com/inconshreveable/mousetrap v1.1.0
+go: added github.com/spf13/cobra v1.9.1
+go: added github.com/spf13/pflag v1.0.6
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/cli-projects/quiz (master)
+$ go install github.com/spf13/cobra-cli@latest
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/cli-projects/quiz (master)
+$
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/cli-projects/quiz (master)
+$ cobra-cli init quiz
+Your Cobra application is ready at
+C:\Users\Dell\Documents\DEVOPS\GO\projects\cli-projects\quiz/quiz
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/cli-projects/quiz (master)
+$ cobra-cli add add
+add created at C:\Users\Dell\Documents\DEVOPS\GO\projects\cli-projects\quiz
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/cli-projects/quiz (master)
+$ cobra-cli add sub
+sub created at C:\Users\Dell\Documents\DEVOPS\GO\projects\cli-projects\quiz
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/cli-projects/quiz (master)
+$ cobra-cli add mul
+mul created at C:\Users\Dell\Documents\DEVOPS\GO\projects\cli-projects\quiz
+
+Dell@DESKTOP-NM25GIO MINGW64 ~/Documents/DEVOPS/GO/projects/cli-projects/quiz (master)
+$ cobra-cli add div
+div created at C:\Users\Dell\Documents\DEVOPS\GO\projects\cli-projects\quiz
+
+Dell@DESKTOP-NM25GIO 
